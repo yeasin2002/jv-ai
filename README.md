@@ -1,26 +1,15 @@
-# Clin Technologies - AI Clinical Documentation Platform
-
-Clin Technologies is a modern web application that revolutionizes clinical documentation for healthcare providers. Built with React, Redux Toolkit, and @tanstack/react-query, it leverages advanced artificial intelligence to create accurate, HIPAA-compliant documentation from clinical conversations, integrating seamlessly with existing EMR systems.
-
-## Features
+# Clin Technologies
 
 - **Authentication**: Secure signup, login, and JWT-based session management
 - **User Management**: Profile management, subscription status, and company user invites
-- **Chat Platform**: AI-powered chat for clinical documentation and support
-- **Subscription Handling**: Buy and update subscription plans
-- **Support & Terms**: Built-in support request and terms retrieval
 - **Modern UI**: Responsive, accessible, and beautiful interface with Tailwind CSS
 - **API Integration**: All API calls handled via a reusable fetcher and React Query hooks
-- **State Management**: Redux Toolkit for global state (auth, user, etc.)
+- **State Management**: Redux Toolkit for global state
 - **Error Handling**: User-friendly notifications with react-hot-toast
 
 ## Tech Stack
 
-- **Frontend**: React, TypeScript, Vite
-- **State Management**: Redux Toolkit, @tanstack/react-query
-- **Styling**: Tailwind CSS
-- **Notifications**: react-hot-toast
-- **API**: RESTful endpoints (see `public/ALI.postman_collection.json`)
+<img src="https://go-skill-icons.vercel.app/api/icons?i=ts,react,tailwindcss,vite,redux" />
 
 ## Getting Started
 
@@ -54,7 +43,3 @@ All API endpoints are documented in the included Postman collection. Authenticat
 - Update branding, colors, and assets in `src/assets/` and `src/components/`
 - Extend Redux slices and React Query hooks for new features
 - Add new pages or components as needed
-
-## License
-
-This project is for demonstration and internal use. Contact Clin Technologies for licensing and commercial use.
