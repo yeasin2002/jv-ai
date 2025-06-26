@@ -1,6 +1,41 @@
+import { useSignin } from "@/store/api";
+import { setAuthError, setAuthLoading, setAuthUser } from "@/store/features/auth/authSlice";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router";
+
 interface Props extends React.ComponentProps<"div"> {}
 
 export const LoginPage = ({ ...props }: Props) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const { mutate, isPending } = useSignin();
+  const error = useSelector((state: any) => state.auth.error);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    dispatch(setAuthLoading(true));
+    mutate(
+      { email, password },
+      {
+        onSuccess: (data: any) => {
+          dispatch(
+            setAuthUser({ user: data.user || null, token: data.token || data.access || "" }),
+          );
+          dispatch(setAuthLoading(false));
+          dispatch(setAuthError(null));
+          navigate("/");
+        },
+        onError: (err: any) => {
+          dispatch(setAuthError(err.message || "Login failed"));
+          dispatch(setAuthLoading(false));
+        },
+      },
+    );
+  };
+
   return (
     <div
       {...props}
@@ -16,8 +51,7 @@ export const LoginPage = ({ ...props }: Props) => {
           <h2 className="text-3xl font-bold text-gray-900">Hello, Welcome!</h2>
           <p className="mt-2 text-sm text-gray-600">Please Enter Your Details Below To Continue</p>
         </div>
-
-        <form className="mt-8 space-y-6">
+        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
             <div>
               <label htmlFor="email" className="text-sm font-medium text-gray-700">
@@ -29,11 +63,13 @@ export const LoginPage = ({ ...props }: Props) => {
                   type="email"
                   name="email"
                   placeholder="Enter Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none sm:text-sm"
+                  required
                 />
               </div>
             </div>
-
             <div>
               <label htmlFor="password" className="text-sm font-medium text-gray-700">
                 Password
@@ -44,9 +80,13 @@ export const LoginPage = ({ ...props }: Props) => {
                   type="password"
                   name="password"
                   placeholder="Enter Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="block w-full appearance-none rounded-md border border-gray-300 px-3 py-2 placeholder-gray-400 shadow-sm focus:border-blue-500 focus:ring-blue-500 focus:outline-none sm:text-sm dark:text-black"
+                  required
                 />
                 <button type="button" className="absolute inset-y-0 right-0 flex items-center pr-3">
+                  {/* Eye icon here */}
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -62,7 +102,6 @@ export const LoginPage = ({ ...props }: Props) => {
                 </button>
               </div>
             </div>
-
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 <input
@@ -84,14 +123,14 @@ export const LoginPage = ({ ...props }: Props) => {
               </a>
             </div>
           </div>
-
+          {error && <div className="text-sm text-red-500">{error}</div>}
           <button
             type="submit"
             className="flex w-full justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:outline-none"
+            disabled={isPending}
           >
-            Login
+            {isPending ? "Logging in..." : "Login"}
           </button>
-
           <div className="text-center">
             <p className="text-sm text-gray-600">
               create account,{" "}
