@@ -9,7 +9,7 @@ export function OurSolutions() {
       description:
         "Mitigate compliance risk with powerful AI that optimizes chart reviews for accuracy, integrity, coding, and compliance. Validify automatically identifies documentation gaps, ensures coding accuracy, and maintains regulatory compliance.",
       borderColor: "#10B981",
-      iconBgColor: "#10B981",
+      iconBgColor: `rgba(30,58,138,0.3)`,
     },
     {
       icon: <Clock className="h-6 w-6 text-white" />,
@@ -17,7 +17,7 @@ export function OurSolutions() {
       description:
         "Effortlessly redact HIPAA identifiers from text, documents, and structured data with Redactify – automating your compliance workflow. Protect sensitive patient information while maintaining clinical context.",
       borderColor: "#F59E0B",
-      iconBgColor: "#F59E0B",
+      iconBgColor: `rgba(30,58,138,0.3)`,
     },
     {
       icon: <Mic className="h-6 w-6 text-white" />,
@@ -25,7 +25,7 @@ export function OurSolutions() {
       description:
         "Spend less time documenting. TranscriptX dictates and transcribes clinical conversations in real-time, automatically generating structured documentation that integrates seamlessly with your EMR system.",
       borderColor: "#3B82F6",
-      iconBgColor: "#3B82F6",
+      iconBgColor: `rgba(30,58,138,0.3)`,
     },
     {
       icon: <FileText className="h-6 w-6 text-white" />,
@@ -33,12 +33,12 @@ export function OurSolutions() {
       description:
         "Your best friend with charting – turn any normal text into comprehensive, structured clinical documentation. Chartwright intelligently formats and organizes information for optimal workflow efficiency.",
       borderColor: "#EC4899",
-      iconBgColor: "#EC4899",
+      iconBgColor: `rgba(30,58,138,0.3)`,
     },
   ];
 
   return (
-    <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 px-6 py-20">
+    <section className="bg-background relative px-6 py-20">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="absolute top-10 right-10 h-72 w-72 rounded-full bg-blue-500/5 blur-3xl"></div>
