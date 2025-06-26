@@ -33,3 +33,4 @@ export const Benefits = ({ ...props }: Props) => {
     </section>
   );
 };
+

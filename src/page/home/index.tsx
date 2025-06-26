@@ -1,5 +1,7 @@
 import { About } from "./about";
 import { Benefits } from "./benefits";
+import { CaseUse } from "./case-use";
+import { Contact } from "./contact";
 import { Hero } from "./hero";
 import { Navbar } from "./nav-bar";
 import { OurSolutions } from "./Our-solutions";
@@ -14,6 +16,8 @@ export const Home = () => {
       <OurSolutions />
       <Technology />
       <Benefits />
+      <CaseUse />
+      <Contact />
     </>
   );
 };
