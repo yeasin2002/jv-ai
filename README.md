@@ -1,72 +1,60 @@
-## React-ts Starter
+# Clin Technologies - AI Clinical Documentation Platform
 
-#### This is a simple starter for a React project with TypeScript and vite. It includes a basic setup for a React project with TypeScript, ESLint, Prettier, shadcn/ui. and many more. This could be your perfect starter templates to initialize your new React project. you don't have to waste time in configuring everything. setup your project with this template withing a minute.
+Clin Technologies is a modern web application that revolutionizes clinical documentation for healthcare providers. Built with React, Redux Toolkit, and @tanstack/react-query, it leverages advanced artificial intelligence to create accurate, HIPAA-compliant documentation from clinical conversations, integrating seamlessly with existing EMR systems.
 
-#### Don't forget to give a ⭐ `star` if you like it. and feel to contribute. Thank you.
+## Features
 
-### Features
+- **Authentication**: Secure signup, login, and JWT-based session management
+- **User Management**: Profile management, subscription status, and company user invites
+- **Chat Platform**: AI-powered chat for clinical documentation and support
+- **Subscription Handling**: Buy and update subscription plans
+- **Support & Terms**: Built-in support request and terms retrieval
+- **Modern UI**: Responsive, accessible, and beautiful interface with Tailwind CSS
+- **API Integration**: All API calls handled via a reusable fetcher and React Query hooks
+- **State Management**: Redux Toolkit for global state (auth, user, etc.)
+- **Error Handling**: User-friendly notifications with react-hot-toast
 
-- Tailwindcss, shadcn-ui with Typescript configured
-- igniting vite with powerful plugins
-- husky hooks setup for pre-commit
-- docker setup
-- eslint, prettier setup for code formatting
-- standard folder structure
-- Custom import aliases (Example: @/components )
-- dependabot to keep notify to update dependencies
-- perfect workspace settings for single or team project.
+## Tech Stack
 
-## Vite Plugins That you must need to know for this starter.
+- **Frontend**: React, TypeScript, Vite
+- **State Management**: Redux Toolkit, @tanstack/react-query
+- **Styling**: Tailwind CSS
+- **Notifications**: react-hot-toast
+- **API**: RESTful endpoints (see `public/ALI.postman_collection.json`)
 
-### vite-plugin-svgr
+## Getting Started
 
-This plugin is used to generate SVG images from React components. You can use this plugin in your project.
-Example:
+1. **Install dependencies:**
+   ```sh
+   npm install
+   ```
+2. **Run the development server:**
+   ```sh
+   npm run dev
+   ```
+3. **Build for production:**
+   ```sh
+   npm run build
+   ```
 
-```javascript
-import Logo from '@/assets/react.svg?react';
-// just add ?react query to get the svg component
+## Project Structure
 
-export const App = () => {
-  return (
-    <div {...props}>
-      <Logo />
-      {/* You can use svg components as like normal React components */}
-    </div>
-  );
-};
-```
+- `src/page/` - All main pages (login, signup, home, etc.)
+- `src/store/` - Redux store, slices, and API logic
+- `src/utils/` - Utility functions (including the API fetcher)
+- `src/components/` - Reusable UI components
+- `public/ALI.postman_collection.json` - API documentation and endpoints
 
-### unplugin-fonts
+## API Reference
 
-This plugin is used to generate fonts from Google fonts. You can use this plugin in your project.
+All API endpoints are documented in the included Postman collection. Authentication and most endpoints require a valid JWT token.
 
-How to use ? Open `/config/fonts.config.ts` file and add your fonts like this: name should be exactly same as in Google fonts. If you wan to add custom fonts you can check their doc. [link](https://github.com/cssninjaStudio/unplugin-fonts#readme)
+## Customization
 
-```javascript
-{
-    name: 'Space Grotesk',
-    styles: 'wght@300;400;500;700',
-  },
-```
+- Update branding, colors, and assets in `src/assets/` and `src/components/`
+- Extend Redux slices and React Query hooks for new features
+- Add new pages or components as needed
 
-### unplugin-auto-import/vite
+## License
 
-This plugin is used to auto import modules. You can use this plugin in your project.
-auto-import will handle all imports like react, react-router and also shadcn-ui's component in your @component/ui folder , etc. and you can add more.
-
-Example:
-
-```javascript
-export function Counter() {
-  const [count, setCount] = useState(0); // no need to import react and react-router, auto-import will handle it
-  return (
-    <div>
-      <Button onClick={() => setCount(count + 1)}>Count: {count}</Button>
-      {/*  also,  Button from @/components/ui but you don't need to import it.  */}
-    </div>
-  );
-}
-```
-
-#### Note: If you need SEO or Server Side Rendering you can use Next.js, Nuxtjs, Remix, Astro Etc SSR based framework. This template is just for vite-react.
+This project is for demonstration and internal use. Contact Clin Technologies for licensing and commercial use.
