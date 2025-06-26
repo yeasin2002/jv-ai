@@ -1,16 +1,15 @@
+import { LogoImg } from "@/components/hero-img";
 import { Link } from "react-router";
 
 interface Props extends React.ComponentProps<"nav"> {}
 
 export const Navbar = ({ ...props }: Props) => {
   return (
-    <nav className="relative z-10 w-full bg-[#0F172A] px-6 py-6" {...props}>
+    <nav className="relative z-10 w-full bg-[#0F172A] px-6 py-3" {...props}>
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
-          <div className="flex h-8 w-8 items-center justify-center rounded-full border-2 border-blue-400">
-            <div className="h-4 w-4 rounded-full bg-blue-400"></div>
-          </div>
+          <LogoImg className="h-10 w-10" />
           <span className="text-xl font-semibold text-white">Clin</span>
         </div>
 
