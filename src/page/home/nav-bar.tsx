@@ -5,7 +5,7 @@ interface Props extends React.ComponentProps<"nav"> {}
 
 export const Navbar = ({ ...props }: Props) => {
   return (
-    <nav className="relative z-10 w-full bg-[#0F172A] px-6 py-3" {...props}>
+    <nav className="relative z-10 w-full bg-[#0F172A] px-6 pt-3" {...props}>
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         {/* Logo */}
         <div className="flex items-center space-x-2">
