@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router";
 
 import { Home } from "@/page/home";
 import { NotFound, RootErrorBoundary } from "./page";
+import { LoginPage } from "./page/login";
+import { SignupPage } from "./page/signup";
 import { store } from "./store";
 
 // Create a client
@@ -17,6 +19,8 @@ const App = () => {
         <Provider store={store}>
           <Routes>
             <Route path="/" element={<Home />} errorElement={<RootErrorBoundary />} />
+            <Route path="/login" element={<LoginPage />} errorElement={<RootErrorBoundary />} />
+            <Route path="/signup" element={<SignupPage />} errorElement={<RootErrorBoundary />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Provider>

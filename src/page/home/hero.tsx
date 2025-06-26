@@ -1,4 +1,5 @@
 import { LogoImg } from "@/components/hero-img";
+import { Link } from "react-router";
 
 interface Props extends React.ComponentProps<"div"> {}
 
@@ -38,20 +39,20 @@ export const Hero = ({ ...props }: Props) => {
           accurate documentation that integrates with your existing EMR system.
         </p>
         <div className="mt-[40px] flex translate-y-[20px] transform animate-[fadeInUp_1s_cubic-bezier(0.16,1,0.3,1)_forwards_1.4s] flex-col justify-center gap-5 md:flex-row">
-          <a
+          <Link
             className="inline-block rounded-full border-2 border-[#3b82f6] bg-transparent px-8 py-4 text-center text-white shadow-[0_5px_15px_rgba(37,99,235,0.2)] transition-colors hover:bg-[rgba(59,130,246,0.1)]"
-            href="/login"
+            to="/login"
             data-discover="true"
           >
             Login
-          </a>
-          <a
+          </Link>
+          <Link
             className="relative z-1 inline-block overflow-hidden rounded-full bg-gradient-to-r from-[#3b82f6] to-[#2563eb] px-8 py-4 text-center text-white shadow-[0_5px_15px_rgba(37,99,235,0.4)] transition-all hover:translate-y-[-3px] hover:shadow-[0_8px_20px_rgba(37,99,235,0.5)]"
-            href="/signUp"
+            to="/signup"
             data-discover="true"
           >
             Signup
-          </a>
+          </Link>
         </div>
       </div>
     </div>
